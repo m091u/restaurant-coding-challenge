@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get("/restaurants", (req, res) => {
   axios
     .get(
-      `https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/CF11 8AZ`
+      `https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/LS2 7HY`
     )
     .then((response) => {
       const restaurants = response.data.restaurants.slice(0, 10);

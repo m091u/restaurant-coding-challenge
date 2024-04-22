@@ -6,14 +6,15 @@ const port = 3000;
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('Server working');
-  });
+app.get("/", (req, res) => {
+  res.send("Server working");
+});
 
-app.get("/restaurants", (req, res) => {
+app.get("/restaurants/:postcode", (req, res) => {
+  const postcode = req.params.postcode;
   axios
     .get(
-      `https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/LS2 7HY`
+      `https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}`
     )
     .then((response) => {
       const restaurants = response.data.restaurants.slice(0, 10);

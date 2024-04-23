@@ -56,8 +56,10 @@ To start the frontend development server, run: npm run dev
 
 
 ## Improvements
+- **Branch Usage:** use feature branches for development and avoid direct commits to the main branch
+- **Use of Environment Variables:** utilize environment variables (.env) to save the API URL and ports for better configuration management.
 - **Unit Testing:** write tests to ensure the reliability of the application
 - **Error Handling:** handle errors and display appropriate messages to the user
 - **Performance Optimization:** optimize the application for better performance
-- **Use of Environment Variables:** Utilize environment variables (.env) to save the API URL and ports for better configuration management.
+
 

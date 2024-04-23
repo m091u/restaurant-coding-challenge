@@ -19,7 +19,6 @@ app.get("/restaurants/:postcode", (req, res) => {
     .then((response) => {
       const restaurants = response.data.restaurants.slice(0, 10);
       res.json(restaurants);
-      
     })
     .catch((error) => {
       console.log("Error:", error);

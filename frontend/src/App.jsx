@@ -6,7 +6,7 @@ import PostCodes from "./components/PostCodes";
 
 function App() {
   const [restaurants, setRestaurants] = useState([]);
-  const [postcode, setPostcode] = useState('CT1 2EH')
+  const [postcode, setPostcode] = useState("CT1 2EH");
 
   useEffect(() => {
     axios
@@ -20,10 +20,12 @@ function App() {
   }, [postcode]);
 
   const handlePostCodeChange = (newPostcode) => {
-      setPostcode(newPostcode);
-  }
+    setPostcode(newPostcode);
+  };
 
- 
+  const sortedRestaurants = [...restaurants].sort(
+    (a, b) => b.rating.starRating - a.rating.starRating
+  );
 
   return (
     <>
@@ -31,9 +33,8 @@ function App() {
       <PostCodes onChange={handlePostCodeChange} />
       <h3>Displaying restaurant details for post code {postcode}</h3>
       <div className="restaurants">
-        {restaurants.map((restaurant) => (
-          <Restaurant
-            key={restaurant.id}  restaurant={restaurant} />
+        {sortedRestaurants.map((restaurant) => (
+          <Restaurant key={restaurant.id} restaurant={restaurant} />
         ))}
       </div>
     </>

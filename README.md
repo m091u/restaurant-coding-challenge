@@ -5,7 +5,8 @@ This project fetches restaurant data from the Just-Eat API based on a given post
 ## Features
 - Fetch restaurant data from the Just-Eat API
 - Display restaurant data including name, cuisine, rating and address
-- Allows filtering by postal code
+- Allow filtering by postal code
+- Display restaurants sorted by highest rating
   
 ## Technologies used
 
@@ -22,28 +23,41 @@ This project fetches restaurant data from the Just-Eat API based on a given post
 
 ## How to Run
 
-## Backend
-### Installation
+### Backend
+#### Installation
 1. Navigate to the `backend` directory: 
    cd RESTAURANT-CHALLENGE/backend
 2. Install dependencies:
    npm install
 
-### Running the Server
+#### Running the Server
 To start the backend server, run: npm run dev
 The server will start at `http://localhost:3000`.
 
-### API Endpoint
+#### API Endpoint
 GET /restaurants
 Fetches restaurant data for a predefined postal code.
 
-## Frontend
-### Installation
+### Frontend
+#### Installation
 1. Navigate to the `frontend` directory:
    cd RESTAURANT-CHALLENGE/frontend
 2. Install dependencies:
    npm install
 
-### Running the Client
+#### Running the Client
 To start the frontend development server, run: npm run dev
+
+
+## Assumptions and Clarifications
+- It was unclear if the application should allow users to change between postal codes or if only one postal code should be used in the application.
+- The application was assumed to be used in a web browser.
+- The challenge was assumend not to require testing for completion
+
+
+## Improvements
+- **Unit Testing:** write tests to ensure the reliability of the application
+- **Error Handling:** handle errors and display appropriate messages to the user
+- **Performance Optimization:** optimize the application for better performance
+- **Use of Environment Variables:** Utilize environment variables (.env) to save the API URL and ports for better configuration management.
 
